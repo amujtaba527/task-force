@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react"
+import Image from "next/image"
 
 interface LogoProps {
   variant?: "dark" | "light"
@@ -6,13 +6,12 @@ interface LogoProps {
 
 export default function Logo({ variant = "dark" }: LogoProps) {
   const textColor = variant === "light" ? "text-white" : "text-[#1A1A1A]"
-  const iconColor = variant === "light" ? "text-[#007F5F]" : "text-[#007F5F]"
   const accentColor = variant === "light" ? "text-[#FFB300]" : "text-[#FFB300]"
 
   return (
-    <div className="flex items-center space-x-3">
+    <div className="flex items-center space-x-1">
       <div className="relative">
-        <Shield className={`h-8 w-8 ${iconColor}`} />
+        <Image src="/logo.png" alt="Logo" width={80} height={80} />
         <div className={`absolute top-1 left-1 w-2 h-2 ${accentColor} rounded-full`}></div>
       </div>
       <div className="flex flex-col">
